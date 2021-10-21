@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="voucher.model.couponBean">
+
+<update id="couponRegister">
+update coupon set cp_id = #{cp_id},cp_regdate=sysdate where cp_number = #{cp_number}
+</update>
+
+<select id="getOneData" resultType="MyCoupon">
+select * from coupon where cp_number = #{cp_number}
+</select>
+
+<select id="getAllData" resultType="MyCoupon"
+		parameterType="hashmap">
+		select * from coupon
+		<if test="whatColumn=='cp_name'">
+			where cp_name like #{keyword}
+		</if>
+		<if test="whatColumn=='cp_number'">
+			where cp_number like #{keyword}
+		</if>
+		order by cp_num desc
+	</select>
+
+	<select id="getTotalCount" resultType="int"
+		parameterType="hashmap">
+		select count(*) from coupon
+		<if test="whatColumn=='cp_name'">
+			where cp_name like #{keyword}
+		</if>
+		<if test="whatColumn=='cp_number'">
+			where cp_number like #{keyword}
+		</if>
+		order by cp_num desc
+	</select>
+	
+	<insert id="insertData">
+	insert into coupon values(coupon_seq.nextval,'',#{cp_name},#{cp_number},#{cp_discount},'',#{cp_duedate},'','false')
+	</insert>
+	
+	<select id="couponInfo" resultType="MyCoupon">
+	select * from coupon where cp_id = #{cp_id} and cp_check = 'false'
+	</select>
+	
+	<update id="couponUse">
+	update coupon set cp_usedate=sysdate,cp_check='true' where cp_id = #{cp_id} and cp_check = 'false'
+	</update>
+	
+</mapper>

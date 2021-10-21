@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="member.model.MemberBean">
+
+<insert id="insertMember">
+insert into members values(members_seq.nextval,#{id},#{password},#{name},sysdate,#{tel1},#{tel2},#{tel3},'user')
+</insert>
+
+<select id="selectAll" resultType="MyMember">
+	select * from members order by num asc
+</select>
+
+<select id="getData" resultType="MyMember">
+select * from members where id = #{id}
+</select>
+
+<select id="getID" resultType="MyMember">
+select * from members where name = #{name}
+</select>
+
+<select id="getPW" resultType="MyMember">
+select * from members where name = #{name} and id = #{id}
+</select>
+<select id="getTotalCount" resultType="int">
+  		select count(*) from members
+  		<if test="whatColumn=='id'">
+  			where id like #{keyword}
+  		</if>
+  		<if test="whatColumn=='name'">
+  			where name like #{keyword}
+  		</if>
+  	</select>
+	
+	<select id="getMemberList" resultType="MyMember">
+		select * from members
+		<if test="whatColumn=='id'">
+			where id like #{keyword}
+		</if>
+		<if test="whatColumn=='name'">
+			where name like #{keyword}
+		</if>
+		
+		order by num asc
+	</select>
+	
+	<select id="getMemberOrderList" resultType="MyMember">
+		select * from members
+		<if test="whatColumn=='id'">
+			where id like #{keyword}
+		</if>
+		<if test="whatColumn=='name'">
+			where name like #{keyword}
+		</if>
+		
+		order by num asc
+	</select>
+	
+	<select id="getMember" resultType="MyMember">
+		select * from members where num = #{num}
+	</select>
+	
+	<update id="updateData">
+		update members set id=#{id},password=#{password},name=#{name},tel1=#{tel1},tel2=#{tel2},tel3=#{tel3},authority=#{authority} where num=#{num}
+	</update>
+	
+	<delete id="deleteMember">
+		delete from members where num = #{num}
+	</delete>
+<select id="idCheck" resultType="int">select count(id) from members where id = #{id} </select>
+
+<update id="updateMember" >
+	update members set name=#{name},tel1=#{tel1},tel2=#{tel2},tel3=#{tel3} where num=#{num}
+</update>
+
+<select id="getByNumData" resultType="MyMember">
+select * from members where num = #{num}
+</select>
+
+<select id="getByCommodity" resultType="String">
+select c.name  from commodity c inner join orders o on c.num = o.cnum where o.mnum=#{mnum}
+</select>
+
+</mapper>

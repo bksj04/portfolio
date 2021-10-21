@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="member.model.MemberJjimBean">
+
+<insert id="insertJjim">
+	insert into jjim values(jjim_seq.nextval,#{video_num},#{member_id})
+</insert>
+
+<delete id="deleteJjim">
+	delete from jjim where video_num = #{video_num} and member_id = #{member_id}
+</delete>
+
+<select id="getByData" resultType="myJjim">
+	select * from jjim where member_id=#{member_id}
+</select>
+
+<select id="getByMydata" resultType="myJjim">
+	select v.image as video_image,v.category as video_category,v.num as video_num from jjim j inner join video v on j.video_num = v.num where j.member_id = #{member_id} 
+</select>
+
+</mapper>

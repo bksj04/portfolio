@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="category.model.CategoryBean">
+	<select id="selectMovie" resultType="MyCategory">
+		select * from video where category='movie'
+	</select>
+	
+	<select id="selectAll" resultType="MyCategory">
+		select * from video 
+	</select>
+
+	<select id="detailVideoView" resultType="MyCategory">
+		select * from video where num = #{num}
+	</select>
+	
+	<select id="selectTitle" resultType="MyCategory">
+		select * from video where title = #{title}
+	</select>
+	
+	<select id="selectNum" resultType="MyCategory">
+		select * from video where num = #{num}
+	</select>
+	
+	
+	
+	<select id="detailVideoGenre" resultType="MyCategory">
+		select * from video_c where genre = #{genre}
+	</select>
+	
+	<select id="selectEnter" resultType="MyCategory">
+		select * from video where category='enter'
+	</select>
+	
+	<select id="selectDrama" resultType="MyCategory">
+		select * from video where category='drama'
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+  		select count(*) from video
+  		<if test="whatColumn=='num'">
+  			where num like #{keyword}
+  		</if>
+  		<if test="whatColumn=='title'">
+  			where title like #{keyword}
+  		</if>
+  	</select>
+  	<select id="getVideoList" resultType="MyCategory">
+		select * from video
+		<if test="whatColumn=='num'">
+			where num like #{keyword}
+		</if>
+		<if test="whatColumn=='title'">
+			where title like #{keyword}
+		</if>
+		ORDER BY num ASC
+	</select>
+	<insert id="insertVideo">
+		insert into video 
+		values(video_seq.nextval,#{title},#{category},#{grade},#{image})
+	</insert>
+	
+	
+	<update id="updateVideo">
+		update video set 
+		title=#{title},category=#{category},grade=#{grade},image=#{image} where num=#{num}
+	</update>
+	
+	<update id="updateNoVideo">
+		update video set 
+		title=#{title},category=#{category},grade=#{grade} where num=#{num}
+	</update>
+	
+	<delete id="detailVideoDelete">
+		delete from video where num=#{num}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

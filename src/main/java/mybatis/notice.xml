@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cs.model.CsNoticeBean">
+<select id="getAllData" resultType="MyCsNotice"
+		parameterType="hashmap">
+		select * from notice
+		<if test="whatColumn=='division'">
+			where division like #{keyword}
+		</if>
+		<if test="whatColumn=='subject'">
+			where subject like #{keyword}
+		</if>
+		order by reg_date desc
+	</select>
+	
+	<select id="getTotalCount" resultType="int"
+		parameterType="hashmap">
+		select count(*) from notice
+		<if test="whatColumn=='division'">
+			where division like #{keyword}
+		</if>
+		<if test="whatColumn=='subject'">
+			where subject like #{keyword}
+		</if>
+		order by reg_date desc
+	</select>
+	
+	<select id="getOneData" resultType="MyCsNotice">
+	select * from notice where num=#{num}
+	</select>
+	
+	<delete id="deleteData">
+	delete from notice where num=#{num}
+	</delete>
+	
+	<insert id="insertData">
+	insert into notice values(notice_seq.nextval,#{writer},#{subject},#{division},sysdate,#{content})
+	</insert>
+	
+	<update id="updateData">
+	update notice set subject=#{subject},division=#{division},content=#{content} where num=#{num}
+	</update>
+</mapper>
