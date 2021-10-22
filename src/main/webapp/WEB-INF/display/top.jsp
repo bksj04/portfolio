@@ -82,6 +82,7 @@ function openPop(){
 <%@ include file="../common/common.jsp" %>
 <div class="dropdown" align="center">
   <button class="dropbtn">${loginInfo.name}님</button>
+  <a href="mail.member">메일쓰기</a>
   <div class="dropdown-content">
     <p align="center">${loginInfo.name}</p>
     	<a href="adminMain.admin">관리자 페이지</a>

@@ -18,7 +18,7 @@ select * from members where id = #{id}
 </select>
 
 <select id="getID" resultType="MyMember">
-select * from members where name = #{name}
+select * from members where name = #{name} and email = #{email}
 </select>
 
 <select id="getPW" resultType="MyMember">

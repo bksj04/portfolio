@@ -34,8 +34,11 @@ public class MemberDao{
 		return result;
 	}
 
-	public MemberBean getID(String name) {
-		MemberBean bean = sqlSessionTemplate.selectOne(namespace+".getID",name);
+	public MemberBean getID(String name,String email) {
+		MemberBean mb = new MemberBean();
+		mb.setName(name);
+		mb.setEmail(email);
+		MemberBean bean = sqlSessionTemplate.selectOne(namespace+".getID",mb);
 		return bean;
 		
 	}
