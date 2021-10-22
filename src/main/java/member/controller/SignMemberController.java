@@ -23,8 +23,8 @@ public class SignMemberController {
 	
 	
 	private final String command = "sign.member";
-	private final String getPage = "signpage";
-	private final String gotoPage = "loginpage";
+	private final String getPage = "signup";
+	private final String gotoPage = "login";
 	
 	@Autowired
 	MemberDao mdao;

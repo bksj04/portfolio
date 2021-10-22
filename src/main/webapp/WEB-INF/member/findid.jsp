@@ -3,27 +3,32 @@
 <%@ include file="../display/top.jsp" %>
 
 <style>
-#findIdPage{
-}
 #findId {
 	width: 400px;
 	height: 400px;
 	margin: 30px auto;
+		background-color: #252525;
+		padding: 50px;
 }
 </style>
-<div id="findIdPage">
+<script src="resources/js/jquery.js"></script>
+<script type="text/javascript" src="resources/script/findid.js"></script>
 <div id="findId">
 <form action="findid.member" method="post">
-	<h2 align="center">본인인증</h2>
-	<p>
-	<label>이름</label>
-	<input type="text" class="form-control" name="name" placeholder="이름 입력">
-	</p>
-	<br>
+	<h6 align="center">아이디 찾기 수단을 하나 선택해주세요</h6>
+	<div class="row mt-4">
+	      <div class="form-check col">
+          <input type="radio" class="form-check-input" name="findIdWay" value="tel" checked>휴대폰 번호
+      </div>
+	      <div class="form-check col">
+          <input type="radio" class="form-check-input" name="findIdWay" value="email">이메일 주소
+      </div>
+      </div>
+      <div id="form-input">
+	</div>
 	<div align="center">
-	<input type="submit" class="btn btn-primary" value="아이디 찾기">
+	<input type="submit" class="btn btn-primary form-control mt-4" value="확인">
 	</div>
 </form>
-</div>
 </div>
 <%@ include file = "../display/bottom.jsp"%>

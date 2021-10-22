@@ -1,6 +1,7 @@
 package member.model;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 public class MemberBean {
 	private int num;
@@ -18,7 +19,14 @@ public class MemberBean {
 	@NotBlank(message="필수입력 사항입니다.")
 	private String email;
 	@NotBlank(message="필수입력 사항입니다.")
-	private String address;
+	private String addr1;
+	@NotBlank(message="필수입력 사항입니다.")
+	private String addr2;
+	@NotBlank(message="필수입력 사항입니다.")
+	private String addr3;
+	@NotEmpty(message="개인정보 이용에 동의해 주세요.")
+	private String agree;
+	
 	public int getNum() {
 		return num;
 	}
@@ -61,10 +69,29 @@ public class MemberBean {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getAddress() {
-		return address;
+	public String getAddr1() {
+		return addr1;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
 	}
+	public String getAddr2() {
+		return addr2;
+	}
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
+	public String getAddr3() {
+		return addr3;
+	}
+	public void setAddr3(String addr3) {
+		this.addr3 = addr3;
+	}
+	public String getAgree() {
+		return agree;
+	}
+	public void setAgree(String agree) {
+		this.agree = agree;
+	}
+	
 }
