@@ -62,11 +62,11 @@
       <div class="swiper-pagination"></div>
     </div>
 	<br><br>
-	<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 핫한 프로그램</h4>
+	<h4>핫한 프로그램</h4>
 	<!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-       <c:if test="watchcount >= 10">
+       <c:if test="${ vlist.watchcount >= 10}">
         <c:forEach var="mlist" items="${vlists}">
        	 	<div class="swiper-slide"><a href="detailMain.wa?num=${mlist.num}">
        	 	<img src="resources/images/poster/${mlist.image}"></a></div>
