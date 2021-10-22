@@ -67,9 +67,9 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
+        slidesPerView: 5,
         spaceBetween: 30,
-        slidesPerGroup: 3,
+        slidesPerGroup: 5,
         loop: true,
         loopFillGroupWithBlank: true,
         pagination: {
