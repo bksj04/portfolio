@@ -241,6 +241,21 @@ create sequence qna_seq
   maxvalue 10000
   nocache;
  
+ drop table many CASCADE CONSTRAINTS;
+ create table many(
+ num number primary key,
+ vnum number reference video(num) on delete cascade not null,
+ watchcount number not null,
+ jjim number not null
+ );
+ 
+ drop sequence many_seq;
+ create sequence many_seq;
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
   -------------------------------------------------------------------------------------
 insert into members values(members_seq.nextval,'admin','1234','°ü¸®ÀÚ',sysdate,'010','1111','1111','admin');
   
