@@ -4,13 +4,13 @@
 <%@include file="../display/top.jsp"%>
 <style type="text/css">
 .err {
-	font-size: 13pt;
+	font-size: 10pt;
 	color: red;
 	font-weight: bold;
 }
 #signup {
 	width: 450px;
-	height: 1050px;
+	height: 1150px;
 	margin: 30px auto;
 		background-color: #252525;
 		padding: 50px;
@@ -85,6 +85,7 @@
 		<div class="form-check mt-4">
 			<input class="form-check-input" type="checkbox" value="true" name="agree">
 			<label class="form-check-label" for="flexCheckDefault">개인정보 이용 동의</label>
+			<br>
 				<form:errors cssClass="err" path="agree" />
 		</div>
 		<input type="submit" id="sub"
