@@ -36,7 +36,8 @@ create table video(
 	title varchar2(50) not null,
 	category varchar2(50) not null,
 	grade varchar2(10) not null,
-	image varchar2(50) not null
+	image varchar2(50) not null,
+	watchcount number not null
 	);
   
   drop sequence video_seq;
