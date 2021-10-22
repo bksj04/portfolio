@@ -20,7 +20,6 @@ z-index: 2;
 }
 #middlePage{
 padding-top: 150px;
-overflow:auto;
 }
 
 .dropbtn {

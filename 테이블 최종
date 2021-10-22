@@ -1,3 +1,15 @@
+drop table admin CASCADE CONSTRAINTS;
+create table admin(
+num number primary key,
+id varchar2(50) not null unique,
+password varchar2(50) not null,
+name varchar2(50) not null,
+regdate date default sysdate,
+tel varchar2(20) not null,
+address varchar2(20) not null,
+email varchar2(50) not null
+);
+
 drop table members CASCADE CONSTRAINTS;
 create table members(
 num number primary key,
@@ -5,12 +17,9 @@ id varchar2(50) not null unique,
 password varchar2(50) not null,
 name varchar2(50) not null,
 regdate date default sysdate,
-tel1 varchar2(20) not null,
-tel2 varchar2(20) not null,
-tel3 varchar2(20) not null,
+tel varchar2(20) not null,
 address varchar2(20) not null,
-email varchar2(50) not null,
-authority varchar2(20) not null
+email varchar2(50) not null
 );
 drop sequence members_seq;
 create sequence members_seq

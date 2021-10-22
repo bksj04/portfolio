@@ -14,13 +14,11 @@ public class MemberBean {
 	private String regdate;
 
 	@NotBlank(message="필수입력 사항입니다.")
-	private String tel1;
+	private String tel;
 	@NotBlank(message="필수입력 사항입니다.")
-	private String tel2;
+	private String email;
 	@NotBlank(message="필수입력 사항입니다.")
-	private String tel3;
-	private String authority;
-	
+	private String address;
 	public int getNum() {
 		return num;
 	}
@@ -51,29 +49,22 @@ public class MemberBean {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	public String getTel1() {
-		return tel1;
+	public String getTel() {
+		return tel;
 	}
-	public void setTel1(String tel1) {
-		this.tel1 = tel1;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
-	public String getTel2() {
-		return tel2;
+	public String getEmail() {
+		return email;
 	}
-	public void setTel2(String tel2) {
-		this.tel2 = tel2;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getTel3() {
-		return tel3;
+	public String getAddress() {
+		return address;
 	}
-	public void setTel3(String tel3) {
-		this.tel3 = tel3;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getAuthority() {
-		return authority;
-	}
-	public void setAuthority(String authority) {
-		this.authority = authority;
-	}
-
 }
