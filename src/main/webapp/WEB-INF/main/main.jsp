@@ -66,7 +66,7 @@
 	<!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-       <c:if test="${ vlist.watchcount >= 10}">
+       <c:if test="${ vlists.watchcount >= 10}">
         <c:forEach var="mlist" items="${vlists}">
        	 	<div class="swiper-slide"><a href="detailMain.wa?num=${mlist.num}">
        	 	<img src="resources/images/poster/${mlist.image}"></a></div>
