@@ -18,7 +18,7 @@ import member.model.MemberDao;
 public class LoginController {
 
 	private final String command = "/login.member";
-	private final String getPage = "loginpage";
+	private final String getPage = "login";
 	
 	@Autowired
 	MemberDao mdao;

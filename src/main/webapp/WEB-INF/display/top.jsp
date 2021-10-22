@@ -84,13 +84,9 @@ function openPop(){
   <button class="dropbtn">${loginInfo.name}님</button>
   <div class="dropdown-content">
     <p align="center">${loginInfo.name}</p>
-    <c:if test="${loginInfo.authority eq 'admin'}" >
     	<a href="adminMain.admin">관리자 페이지</a>
-    </c:if> 
-      <c:if test="${loginInfo.authority eq 'user'}" >
     <a href="mypage.member?num=${loginInfo.num}&movie_title=${db.title}">마이페이지</a>
     <a href="userupdate.member?num=${loginInfo.num}">회원 정보 수정</a>
-    </c:if>
     <a href="#none" target="_blank" onclick="openPop()">알림함</a>
     <a href="logout.member">로그아웃</a>
   </div>

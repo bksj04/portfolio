@@ -6,7 +6,7 @@
 <mapper namespace="member.model.MemberBean">
 
 <insert id="insertMember">
-insert into members values(members_seq.nextval,#{id},#{password},#{name},sysdate,#{tel},#{email},#{address})
+insert into members values(members_seq.nextval,#{id},#{password},#{name},sysdate,#{tel},#{email},#{addr1},#{addr2},#{addr3})
 </insert>
 
 <select id="selectAll" resultType="MyMember">
@@ -63,7 +63,7 @@ select * from members where name = #{name} and id = #{id}
 	</select>
 	
 	<update id="updateData">
-		update members set id=#{id},password=#{password},name=#{name},tel1=#{tel1},tel2=#{tel2},tel3=#{tel3},authority=#{authority} where num=#{num}
+		update members set id=#{id},password=#{password},name=#{name},tel=#{tel},email#{email},addr1=#{addr1},addr2=#{addr2},addr3=#{addr3} where num=#{num}
 	</update>
 	
 	<delete id="deleteMember">
@@ -72,7 +72,7 @@ select * from members where name = #{name} and id = #{id}
 <select id="idCheck" resultType="int">select count(id) from members where id = #{id} </select>
 
 <update id="updateMember" >
-	update members set name=#{name},tel1=#{tel1},tel2=#{tel2},tel3=#{tel3} where num=#{num}
+	update members set name=#{name},tel=#{tel},email#{email},addr1=#{addr1},addr2=#{addr2},addr3=#{addr3} where num=#{num}
 </update>
 
 <select id="getByNumData" resultType="MyMember">
