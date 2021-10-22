@@ -68,7 +68,7 @@
       <div class="swiper-wrapper">
        
         <c:forEach var="mlist" items="${vlists}" >
-		<c:if test="${vlists.watchcount }">
+		<c:if test="${many.watchcount }">
        	 	<div class="swiper-slide"><a href="detailMain.wa?num=${mlist.num}">
        	 	<img src="resources/images/poster/${mlist.image}"></a></div>
     	</c:if>

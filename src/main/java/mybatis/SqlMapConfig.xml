@@ -21,6 +21,7 @@
 		<typeAlias type="member.model.MemberWatchBean" alias="MyWatch"/>
 		<typeAlias type="order.model.OrderBean" alias="MyOrder"/>
 		<typeAlias type="cs.model.CsQnABean" alias="MyCsQnA"/>
+		<typeAlias type="cs.model.CsQnABean" alias="MyMany"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/member.xml"/>
@@ -38,5 +39,6 @@
 		<mapper resource="mybatis/watch.xml" />
 		<mapper resource="mybatis/order.xml" />
 		<mapper resource="mybatis/qna.xml" />
+		<mapper resource="mybatis/many.xml" />
 	</mappers>
 </configuration>
