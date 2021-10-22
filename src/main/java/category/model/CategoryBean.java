@@ -18,7 +18,6 @@ public class CategoryBean {
 	
 	private String image;
 	
-	private int watchcount;
 	
 	private MultipartFile upload;
 	
@@ -73,11 +72,5 @@ public class CategoryBean {
 		this.upload_old = upload_old;
 	}
 	
-	public int getWatchcount() {
-		return watchcount;
-	}
-	public void setWatchcount(int watchcount) {
-		this.watchcount = watchcount;
-	}
 	
 }
