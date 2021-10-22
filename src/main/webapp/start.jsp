@@ -4,5 +4,5 @@
 <%
 
 String viewWavve = request.getContextPath() + "/main.wa";
-response.sendRedirect(viewWavve);dd
+response.sendRedirect(viewWavve);
 %>
