@@ -16,6 +16,8 @@ import category.model.CategoryBean;
 import category.model.CategoryDao;
 import main.model.MainBean;
 import main.model.MainDao;
+import many.model.ManyBean;
+import many.model.ManyDao;
 import member.model.MemberJjimBean;
 import utility.Paging;
 
@@ -31,16 +33,20 @@ public class MainController {
 	@Autowired(required = false)
 	CategoryDao cdao;
 	
+	@Autowired
+	ManyDao mydao;
+	
 	@RequestMapping(value=command)
 	public ModelAndView doAction() {
 		
 		ModelAndView mav = new ModelAndView();
 	
+		List<ManyBean> many = mydao.selectMany();
 		List<CategoryBean> vlists = cdao.selectAll();
 		List<MainBean> lists = mdao.selectMain();
 		mav.addObject("lists",lists);
 		mav.addObject("vlists",vlists);
-		
+		mav.addObject("many", many);
 		mav.setViewName(getPage);
 		return mav;
 	}
