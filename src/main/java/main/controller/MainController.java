@@ -33,20 +33,19 @@ public class MainController {
 	@Autowired(required = false)
 	CategoryDao cdao;
 	
-	@Autowired
-	ManyDao mydao;
+	
 	
 	@RequestMapping(value=command)
 	public ModelAndView doAction() {
 		
 		ModelAndView mav = new ModelAndView();
 	
-		List<ManyBean> many = mydao.selectMany();
+		
 		List<CategoryBean> vlists = cdao.selectAll();
 		List<MainBean> lists = mdao.selectMain();
 		mav.addObject("lists",lists);
 		mav.addObject("vlists",vlists);
-		mav.addObject("many", many);
+		
 		mav.setViewName(getPage);
 		return mav;
 	}

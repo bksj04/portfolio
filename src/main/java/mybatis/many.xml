@@ -5,6 +5,8 @@
 	
 <mapper namespace="many.model.ManyBean">
 
-
+<select id="selectMany" resultType="MyMany">
+	select * from many
+</select>
 
 </mapper>
