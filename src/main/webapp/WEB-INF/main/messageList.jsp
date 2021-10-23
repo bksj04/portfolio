@@ -25,7 +25,7 @@
 	<c:if test="${empty lists}">
 		<tr align="center">
 			 <td colspan="4">
-			쪽지가 없습니다.</td>
+			알림이 없습니다.</td>
 		</tr>
 	</c:if>
 	<c:forEach var="cqb" items="${lists}" varStatus="status">

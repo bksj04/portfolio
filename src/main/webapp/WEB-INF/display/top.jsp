@@ -7,11 +7,18 @@
 
 a{ 
 text-decoration:none;
+color: #a5a5a5;
+font-size: 14px;
+}
+a:hover{
 color: white;
 }
 #member{
 background-color: black;
+}
+#wrap{
 text-align: right;
+width: 92%;
 }
 #top{
 position:fixed;
@@ -24,8 +31,8 @@ padding-top: 150px;
 
 .dropbtn {
   background-color: black;
-  color: white;
-  font-size: 16px;
+  color: #a5a5a5;
+  font-size: 14px;
   border: none;
 }
 
@@ -44,20 +51,20 @@ padding-top: 150px;
 }
 
 .dropdown-content a {
-  color: white;
+  	color: #a5a5a5;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content p {
-	color:white;
+	color: #a5a5a5;
 	padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {color: white;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
@@ -74,10 +81,9 @@ function openPop(){
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="top">
 <div id="member">
-
+<div id="wrap">
 <%if(session.getAttribute("loginInfo") == null){ %>
-<a href="login.member">로그인</a>
- / <a href="sign.member">회원가입</a>
+<a href="login.member">로그인</a>              
 <%}else{ %>
 <%@ include file="../common/common.jsp" %>
 <div class="dropdown" align="center">
@@ -92,9 +98,9 @@ function openPop(){
     <a href="logout.member">로그아웃</a>
   </div>
 </div>
-
 <%} %>
- / <a href="pay.voucher">이용권</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+ | <a href="list.board">자유게시판</a>
+ | <a href="pay.voucher">이용권</a></div></div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="main.wa"><img src="resources/images/logo.png" width="160" height="85" /></a>
@@ -120,9 +126,6 @@ function openPop(){
         <li class="nav-item">
           <a class="nav-link" href="mypage.member">My</a>
           </li>
-                <li class="nav-item">
-          <a class="nav-link" href="list.board">자유게시판</a>
-        </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-sm-2" type="text" placeholder="검색하기">
