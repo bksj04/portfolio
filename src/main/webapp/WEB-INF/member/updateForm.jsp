@@ -4,76 +4,74 @@
 <%@include file="../display/top.jsp"%>
 <style type="text/css">
 .err {
-	font-size: 13pt;
+	font-size: 10pt;
 	color: red;
 	font-weight: bold;
 }
-#updatePage{
+#update{
 	width: 450px;
-	height: 400px;
+	height: 700px;
 	margin: 30px auto;
+		background-color: #252525;
+		padding: 50px;
 }
 </style>
-<br>
-<%
-String[] tel1 = { "02", "064", "010" };
-request.setAttribute("tel1", tel1);
-%>
-<div id="updatePage">
-		<h3 align="center">회원정보 수정</h3>
-		<form:form commandName="memberBean" name="updateform"
-			action="userupdate.member" method="post">
-			<input type="hidden" name="num" value="${mb.num}">
-			<input type="hidden" name="id" value="${mb.id}">
-			<fieldset>
-				<div class="form-group">
-					<label for="password" class="form-label mt-4">이름</label> <input
-						type="text" class="form-control" name="name"
-						value="${mb.name}">
-					<form:errors cssClass="err" path="name" />
-				</div>
-				
-				<div class="form-group">
-					<label for="name" class="form-label mt-4">전화번호</label>
-					<div class="row">
-						<div style="width: 120px">
-							<select class="form-select" name="tel1">
-								<option value="">선택</option>
-								<c:forEach var="i" begin="0" end="<%=tel1.length - 1%>" step="1">
-									<option value="${tel1[i] }"
-										<c:if test="${tel1[i] == loginInfo.tel1 }">
-								selected
-								</c:if>>${tel1[i] }</option>
-								</c:forEach>
-							</select>
-							<form:errors cssClass="err" path="tel1" />
-						</div>
-						-
-						<div style="width: 160px">
-							<input type="text" class="form-control" name="tel2"
-								placeholder="전화번호 입력" value="${mb.tel2 }">
-								<form:errors cssClass="err" path="tel2" />
-						</div>
-						-
-						<div style="width: 160px">
-							<input type="text" class="form-control" name="tel3"
-								placeholder="전화번호 입력" value="${mb.tel3 }">
-								<form:errors cssClass="err" path="tel3" />
-						</div>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label for="password" class="form-label mt-4">비밀번호</label> <input
-						type="password" class="form-control" name="password">
-					<form:errors cssClass="err" path="password" />
-				</div>
-			</fieldset>
-			<br>
-			<br>
-			<div align="center">
-				<input type="submit" class="btn btn-primary" value="수정하기">
+<script src="resources/js/jquery.js"></script>
+<script type="text/javascript" src="resources/script/update.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<div id="update">
+	<form:form commandName="memberBean"
+		action="update.member" method="post">
+		<input type="hidden" name="num" value="${mb.num }">
+		<input type="hidden" name="id" value="${mb.id }">
+		<input type="hidden" name="agree" value="true">
+		<input type="hidden" name="password" value="${mb.password }">
+		<div class="form-group mt-4">
+			<label for="name" class="form-label">이름</label> <input type="text"
+				class="form-control" name="name" value="${mb.name }">
+			<form:errors cssClass="err" path="name" />
+		</div>
+
+		<div class="form-group mt-4">
+			<label for="tel" class="form-label">전화번호</label> <input type="text"
+				class="form-control" name="tel" placeholder="-빼고입력"
+				value="${mb.tel }">
+				<form:errors cssClass="err" path="tel" />
+		</div>
+		<div class="form-group mt-4">
+			<label for="email" class="form-label">email</label> <input
+				type="text" class="form-control" name="email" value="${mb.email }">
+				<form:errors cssClass="err" path="email" />
+		</div>
+		<div class="form-group mt-4">
+			<input class="form-control" style="width: 40%; display: inline;"
+				placeholder="우편번호" name="addr1" id="addr1" type="text"
+				readonly="readonly" value="${mb.addr1 }">
+			<button type="button" class="btn btn-default"
+				onclick="execPostCode();">
+				<i class="fa fa-search"></i> 우편번호 찾기
+			</button>
+		</div>
+		<div class="form-group mt-4">
+			<input class="form-control" style="top: 5px;" placeholder="도로명 주소"
+				name="addr2" id="addr2" type="text" readonly="readonly" value="${mb.addr2 }" />
+				<form:errors cssClass="err" path="addr2" />
+		</div>
+		<div class="form-group mt-4">
+			<input class="form-control" placeholder="상세주소" name="addr3"
+				id="addr3" type="text" value="${mb.addr3 }" />
+				<form:errors cssClass="err" path="addr3" />
+		</div>
+		<div class="row">
+		<div class="col">
+		<input type="submit"
+			class="btn btn-primary form-control mt-4" value="수정">
 			</div>
-		</form:form>
-	</div>
+			<div class="col">
+		<input type="reset"
+			class="btn btn-primary form-control mt-4"  value="취소">
+			</div>
+			</div>
+	</form:form>
+</div>
 <%@include file="../display/bottom.jsp"%>

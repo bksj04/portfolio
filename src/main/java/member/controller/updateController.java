@@ -22,7 +22,7 @@ import member.model.MemberDao;
 @Controller
 public class updateController {
 
-	private final String command = "update.member";
+	private final String command = "/update.member";
 	private final String getPage = "updateForm";
 	private final String gotoPage = "redirect:/main.wa";
 	
@@ -38,7 +38,6 @@ public class updateController {
 	
 	@RequestMapping(value=command, method=RequestMethod.POST)
 	public ModelAndView doActionPost(@Valid MemberBean mb, BindingResult result,
-									 @RequestParam(value="num", required=true)int num,
 									 HttpSession session,HttpServletResponse response) throws IOException {
 		
 		PrintWriter pw = response.getWriter();
@@ -47,24 +46,15 @@ public class updateController {
 		ModelAndView mav = new ModelAndView();
 		
 		if(result.hasErrors()) {
-			System.out.println("�쑀�슚�꽦 寃��궗 �삤瑜섏엯�땲�떎.");
+			System.out.println("유효성 검사 오류.");
 			mav.addObject("mb", mb);
 			mav.setViewName(getPage);
 			return mav;
 		}
-
-		MemberBean DBmb = mdao.getByNumData(num);
-		if(DBmb.getPassword().equals(mb.getPassword())) {
 			int cnt = mdao.updateMember(mb);
-			MemberBean loginInfo = mdao.getByNumData(num);
+			MemberBean loginInfo = mdao.getByNumData(mb.getNum());
 			session.setAttribute("loginInfo", loginInfo);
 			mav.setViewName(gotoPage);
-		}else {
-			pw.println("<script>alert('�뙣�뒪�썙�뱶媛� �씪移섑븯吏� �븡�뒿�땲�떎.');</script>");
-			pw.flush();
-			mav.addObject("mb", mb);
-			mav.setViewName(getPage);
-		}
 		return mav;
 	}
 }

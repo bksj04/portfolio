@@ -19,9 +19,7 @@
 <script src="resources/js/jquery.js"></script>
 <script type="text/javascript" src="resources/script/signup.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script src="/resources/js/addressapi.js"></script>
 <div id="signup">
-	<h3 align="center">SignUp</h3>
 	<form:form commandName="memberBean" name="loginform"
 		action="sign.member" method="post">
 		<div class="form-group">

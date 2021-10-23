@@ -93,7 +93,7 @@ function openPop(){
     	<a href="adminMain.admin">관리자 페이지</a>
     <a href="mypage.member?num=${loginInfo.num}&movie_title=${db.title}">마이페이지</a>
         <a href="#none" target="_blank" onclick="openPop()">알림함</a>
-    <a href="update.member?num=${loginInfo.num}">회원정보</a>
+    <a href="update.member?num=${loginInfo.num}">회원정보 수정</a>
     <a href="delete.member?num=${loginInfo.num }">회원탈퇴</a>
     <a href="logout.member">로그아웃</a>
   </div>

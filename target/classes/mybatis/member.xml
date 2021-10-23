@@ -72,7 +72,7 @@ select * from members where name = #{name} and id = #{id} and email = #{email}
 <select id="idCheck" resultType="int">select count(id) from members where id = #{id} </select>
 
 <update id="updateMember" >
-	update members set name=#{name},tel=#{tel},email#{email},addr1=#{addr1},addr2=#{addr2},addr3=#{addr3} where num=#{num}
+	update members set name=#{name},tel=#{tel},email=#{email},addr1=#{addr1},addr2=#{addr2},addr3=#{addr3} where num=#{num}
 </update>
 
 <select id="getByNumData" resultType="MyMember">
