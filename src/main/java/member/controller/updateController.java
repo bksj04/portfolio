@@ -22,7 +22,7 @@ import member.model.MemberDao;
 @Controller
 public class updateController {
 
-	private final String command = "userupdate.member";
+	private final String command = "update.member";
 	private final String getPage = "updateForm";
 	private final String gotoPage = "redirect:/main.wa";
 	
@@ -47,7 +47,7 @@ public class updateController {
 		ModelAndView mav = new ModelAndView();
 		
 		if(result.hasErrors()) {
-			System.out.println("유효성 검사 오류입니다.");
+			System.out.println("�쑀�슚�꽦 寃��궗 �삤瑜섏엯�땲�떎.");
 			mav.addObject("mb", mb);
 			mav.setViewName(getPage);
 			return mav;
@@ -60,7 +60,7 @@ public class updateController {
 			session.setAttribute("loginInfo", loginInfo);
 			mav.setViewName(gotoPage);
 		}else {
-			pw.println("<script>alert('패스워드가 일치하지 않습니다.');</script>");
+			pw.println("<script>alert('�뙣�뒪�썙�뱶媛� �씪移섑븯吏� �븡�뒿�땲�떎.');</script>");
 			pw.flush();
 			mav.addObject("mb", mb);
 			mav.setViewName(getPage);

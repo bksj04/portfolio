@@ -20,6 +20,7 @@ public class FindidController {
 
 	private final String command = "/findid.member";
 	private final String getPage = "findid";
+	private final String gotoPage = "login";
 	
 	@Autowired
 	MemberDao mdao;
@@ -39,7 +40,7 @@ public class FindidController {
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html;charset=UTF-8");
 		if(loginInfo == null) {
-			pw.println("<script>alert('없는 회원 입니다.');</script>");
+			pw.println("<script>alert('일치하지 않는 회원정보 입니다.');</script>");
 			pw.flush();
 			return getPage;
 		}
@@ -52,16 +53,14 @@ public class FindidController {
 		    	mmb.setSubject(loginInfo.getName()+"님의 아이디 찾기");
 		    	mmb.setMessage(loginInfo.getName()+"님의 찾는 아이디는"+loginInfo.getId()+"입니다.");
 	            mmd.sendMail(mmb); // dto (메일관련 정보)를 sendMail에 저장함
-	            model.addAttribute("message", "이메일이 발송되었습니다."); // 이메일이 발송되었다는 메시지를 출력시킨다.
-	 
+	        	pw.println("<script>alert('메일로 아이디를 발송했습니다.');</script>");
+				pw.flush();
 	        } catch (Exception e) {
 	            e.printStackTrace();
-	            model.addAttribute("message", "이메일 발송 실패..."); // 이메일 발송이 실패되었다는 메시지를 출력
+	            pw.println("<script>alert('메일을 발송에 실패했습니다.');</script>");
+				pw.flush(); // 이메일 발송이 실패되었다는 메시지를 출력
 	        }
-			pw.println("<script>alert('메일을 발송했습니다.');</script>");
-			pw.flush();
-			return getPage;
+			return gotoPage;
 		}
-
 	}
 }

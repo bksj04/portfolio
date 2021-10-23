@@ -2,32 +2,25 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../display/top.jsp" %>
 <style>
-#findPwPage{
-}
 #findPw {
 	width: 400px;
 	height: 400px;
 	margin: 30px auto;
+		background-color: #252525;
+		padding: 50px;
 }
 </style>
-<div id="findPwPage">
 <div id="findPw">
 <form action="findpw.member" method="post">
-	<h2 align="center">본인인증</h2>
-	<p>
-	<label>아이디</label>
-	<input type="text" class="form-control" name="id" placeholder="아이디 입력">
-	<br>
-	<label>이름</label>
-	<input type="text" class="form-control" name="name" placeholder="이름 입력">
-	</p>
-	<br>
+	<h6 align="center">비밀번호 찾기</h6>
+      <div id="form-input">
+      <input type="text" class="form-control mt-4" name="id" placeholder="아이디">
+         <input type="text" class="form-control mt-4" name="name" placeholder="이름">
+	<input type="text" class="form-control mt-4" name="email" placeholder="이메일">
+	</div>
 	<div align="center">
-	<input type="submit" class="btn btn-primary" value="비밀번호 찾기">
+	<input type="submit" class="btn btn-primary form-control mt-4" value="확인">
 	</div>
 </form>
-</div>	
 </div>
-
-
 <%@ include file = "../display/bottom.jsp"%>

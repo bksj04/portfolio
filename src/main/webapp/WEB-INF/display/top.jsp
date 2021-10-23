@@ -82,13 +82,13 @@ function openPop(){
 <%@ include file="../common/common.jsp" %>
 <div class="dropdown" align="center">
   <button class="dropbtn">${loginInfo.name}님</button>
-  <a href="mail.member">메일쓰기</a>
   <div class="dropdown-content">
     <p align="center">${loginInfo.name}</p>
     	<a href="adminMain.admin">관리자 페이지</a>
     <a href="mypage.member?num=${loginInfo.num}&movie_title=${db.title}">마이페이지</a>
-    <a href="userupdate.member?num=${loginInfo.num}">회원 정보 수정</a>
-    <a href="#none" target="_blank" onclick="openPop()">알림함</a>
+        <a href="#none" target="_blank" onclick="openPop()">알림함</a>
+    <a href="update.member?num=${loginInfo.num}">회원정보</a>
+    <a href="delete.member?num=${loginInfo.num }">회원탈퇴</a>
     <a href="logout.member">로그아웃</a>
   </div>
 </div>

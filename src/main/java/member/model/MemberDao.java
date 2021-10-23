@@ -43,10 +43,11 @@ public class MemberDao{
 		
 	}
 
-	public MemberBean getPW(String name, String id) {
+	public MemberBean getPW(String name, String id, String email) {
 		MemberBean mb = new MemberBean();
 		mb.setName(name);
 		mb.setId(id);
+		mb.setEmail(email);
 		mb = sqlSessionTemplate.selectOne(namespace+".getPW",mb);
 		return mb;
 	}
