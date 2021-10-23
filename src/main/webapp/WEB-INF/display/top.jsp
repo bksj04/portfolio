@@ -102,7 +102,7 @@ function openPop(){
  | <a href="list.board">자유게시판</a>
  | <a href="pay.voucher">이용권</a></div></div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
+  <div class="container">
     <a class="navbar-brand" href="main.wa"><img src="resources/images/logo.png" width="160" height="85" /></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
