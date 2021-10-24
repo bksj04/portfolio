@@ -29,7 +29,7 @@ public class DetailVideoController {
 	public ModelAndView doAction(@RequestParam("num")int num,
 			 @RequestParam("pageNumber") int pageNumber) {
 		
-		DetailBean db=ddao.getOneData(num);
+		DetailBean db = ddao.getOneData(num);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("db", db);
 		mav.addObject("pageNumber", pageNumber);

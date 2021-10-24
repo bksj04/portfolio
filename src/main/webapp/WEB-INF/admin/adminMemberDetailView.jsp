@@ -4,17 +4,14 @@
 <style>
 table {
 	width: 100%;
-	border: 1px solid #444444;
-	border-width: 2px;
 }
 
 th, td {
 	border: 1px solid #444444;
-	border-width: 2px;
-	text-align: center;
 }
 
 th {
+	text-align: center;
 	width: 70px;
 }
 </style>
@@ -41,7 +38,7 @@ th {
 	</tr>
 	<tr>
 		<th>전화번호</th>
-		<td>${member.tel1}-${member.tel2}-${member.tel3}</td>
+		<td>${member.tel}</td>
 	</tr>
 	<tr>
 		<th>가입일시</th>
@@ -49,6 +46,22 @@ th {
 				var="noticePostDate" pattern="yyyy-MM-dd HH:mm" /> <fmt:formatDate
 				value="${noticePostDate}" pattern="yyyy-MM-dd HH:mm" var="regdate" />
 			${regdate }</td>
+	</tr>
+		<tr>
+		<th>이메일</th>
+		<td>${member.email}</td>
+	</tr>
+		<tr>
+		<th>우편번호</th>
+		<td>${member.addr1}</td>
+	</tr>
+	<tr>
+		<th>주소</th>
+		<td>${member.addr2}</td>
+	</tr>
+	<tr>
+		<th>상세주소</th>
+		<td>${member.addr3}</td>
 	</tr>
 </table>
 <br>

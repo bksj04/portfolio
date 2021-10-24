@@ -4,13 +4,10 @@
 <style>
 table {
 	width: 100%;
-	border: 1px solid #444444;
-		border-width: 2px;
 }
 
 th, td {
 	border: 1px solid #444444;
-		border-width: 2px;
 }
 
 th {

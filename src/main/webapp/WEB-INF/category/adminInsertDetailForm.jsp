@@ -82,7 +82,7 @@ td{
 			</div>
 			<div class="form-group">
 				<label for="day" class="form-label mt-4">방영일</label>
-				<input type="text" name="day">
+				<input type="date" name="day">
 				<form:errors cssClass="err" path="day" />
 			</div>
 			<div class="form-group">

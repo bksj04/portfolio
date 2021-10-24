@@ -30,19 +30,19 @@ text-align: center;
 	<tbody>
 	<tr>
 		<th>영상 이미지</th>
-		<td><img src="resources/images/poster/${cb.image }" width="130" height="130"> </td>
+		<td><img src="resources/images/poster/${db.image }" width="130" height="130"> </td>
 	</tr>
 	<tr>
 		<th>제목</th>
-		<td>${cb.title } </td>
+		<td>${db.title } </td>
 	</tr>
 	<tr>
 		<th>카테고리</th>
-		<td>${cb.category }</td>
+		<td>${db.category }</td>
 	</tr>
 	<tr>
 		<th>연령 제한</th>
-		<td>${cb.grade } </td>
+		<td>${db.grade } </td>
 	</tr>
 	<tr>
 		<th>장르</th>
