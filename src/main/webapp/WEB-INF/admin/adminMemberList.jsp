@@ -56,7 +56,6 @@ table {
 			<th>이름</th>
 			<th>전화번호</th>
 			<th>가입일자</th>
-			<th>권한</th>
 			<th>수정</th>
 			<th>삭제</th>
 
@@ -76,14 +75,11 @@ table {
 					href="memberDetailView.admin?num=${member.num }&pageNumber=${pageInfo.pageNumber}">${member.id }</a></td>
 				<td>${member.password }</td>
 				<td>${member.name }</td>
-				<td>${member.tel1 }-${member.tel2 }-${member.tel3 }</td>
+				<td>${member.tel}</td>
 				<td><fmt:parseDate value="${member.regdate }"
 						var="noticePostDate" pattern="yyyy-MM-dd HH:mm" /> <fmt:formatDate
 						value="${noticePostDate}" pattern="yyyy-MM-dd HH:mm" var="regdate" />
-					${regdate }</td>
-				<td>
-				${member.authority}
-				</td>
+					${regdate }</td>	
 				<td><input type="button" class="btn btn-primary" value="수정"
 					onClick="goUpdate(${member.num },${pageInfo.pageNumber})"></td>
 				<td><input type="button" class="btn btn-primary" value="삭제"

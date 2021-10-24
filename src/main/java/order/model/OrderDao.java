@@ -31,7 +31,7 @@ public class OrderDao {
 	
 	public int setInsertOrder(OrderBean ob) {
 		System.out.println("1234567");
-		int cnt=sqlSessionTemplate.insert(namespace+".insertOrder", ob);
+		int cnt=sqlSessionTemplate.insert(namespace+".setInsertOrder", ob);
 		return cnt;
 	}
 	

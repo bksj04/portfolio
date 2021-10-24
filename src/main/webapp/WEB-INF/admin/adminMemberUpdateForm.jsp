@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 
 <%@include file="./../common/common.jsp"%>
-
+<script type="text/javascript" src="resources/script/update.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <style type="text/css">
 .err {
 	font-size: 9pt;
@@ -104,53 +105,28 @@ request.setAttribute("tel1", tel1);
 
 			<div class="form-group">
 				<label for="name" class="form-label mt-4">전화번호</label>
-				<div class="row">
-					<div style="width: 120px">
-						<select class="form-select" name="tel1">
-							<option value="">선택</option>
-							<c:forEach var="i" begin="0" end="<%=tel1.length - 1%>" step="1">
-
-								<option value="${tel1[i] }"
-									<c:if test="${tel1[i] == loginInfo.tel1}">
-								selected
-								</c:if>>${tel1[i] }</option>
-
-								<option value="${tel1[i]}"
-									<c:if test="${tel1[i] == loginInfo.tel1}">
-								selected
-								</c:if>>${tel1[i]}</option>
-
-							</c:forEach>
-						</select>
-						<form:errors cssClass="err" path="tel1" />
-					</div>
-					-
-					<div style="width: 160px">
-						<input type="text" class="form-control" name="tel2"
-							placeholder="전화번호 입력" value="${member.tel2 }">
-						<form:errors cssClass="err" path="tel2" />
-					</div>
-					-
-					<div style="width: 160px">
-						<input type="text" class="form-control" name="tel3"
-							placeholder="전화번호 입력" value="${member.tel3 }">
-						<form:errors cssClass="err" path="tel3" />
-					</div>
-				</div>
+						<input type="text" class="form-control" name="tel" placeholder="전화번호 입력" value="${member.tel}">
+						<form:errors cssClass="err" path="tel" />
 			</div>
-			<div class="form-group">
-				<label for="name" class="form-label mt-4">권한</label> <select
-					class="form-select" name="authority">
-					<option value="user"
-						<c:if test="${member.authority == 'user' }">
-					selected
-					</c:if>>user</option>
-					<option value="admin"
-						<c:if test="${member.authority == 'admin' }">
-					selected
-					</c:if>>admin</option>
-				</select>
-			</div>
+			<div class="form-group mt-4">
+			<input class="form-control" style="width: 40%; display: inline;"
+				placeholder="우편번호" name="addr1" id="addr1" type="text"
+				readonly="readonly" value="${mb.addr1 }">
+			<button type="button" class="btn btn-default"
+				onclick="execPostCode();">
+				<i class="fa fa-search"></i> 우편번호 찾기
+			</button>
+		</div>
+		<div class="form-group mt-4">
+			<input class="form-control" style="top: 5px;" placeholder="도로명 주소"
+				name="addr2" id="addr2" type="text" readonly="readonly" value="${mb.addr2 }" />
+				<form:errors cssClass="err" path="addr2" />
+		</div>
+		<div class="form-group mt-4">
+			<input class="form-control" placeholder="상세주소" name="addr3"
+				id="addr3" type="text" value="${mb.addr3 }" />
+				<form:errors cssClass="err" path="addr3" />
+		</div>
 			<br> <br>
 			<div align="center">
 				<input type="submit" class="btn btn-primary" value="수정하기"> <input
