@@ -17,6 +17,6 @@
 	<context:component-scan base-package="member" />
 	<context:component-scan base-package="order" />
 	<context:component-scan base-package="commodity" />
-	<context:component-scan base-package="root" />
+	<context:component-scan base-package="video" />
 
 </beans>

@@ -20,6 +20,7 @@ import category.model.CategoryBean;
 import member.model.MemberBean;
 import member.model.MemberJjimBean;
 import member.model.MemberJjimDao;
+import video.model.videoDao;
 
 @Controller
 public class MemberJjimInsertController {
@@ -29,6 +30,9 @@ public class MemberJjimInsertController {
 
 	@Autowired
 	MemberJjimDao mjdao;
+	
+	@Autowired(required = false)
+	videoDao vdao;
 
 
 	@RequestMapping(value=command)
@@ -56,6 +60,7 @@ public class MemberJjimInsertController {
 			mav.setViewName("alert");
 		}else {
 			int cnt = mjdao.insertJjim(jjim);
+			cnt = vdao.jjimCountUp(jjim.getVideo_num());
 			if(str.equals("Main")) {
 				mav.setViewName("redirect:detail"+str+".wa"+"?num="+jjim.getVideo_num());
 			}else {

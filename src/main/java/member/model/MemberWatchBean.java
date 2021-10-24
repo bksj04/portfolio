@@ -3,23 +3,22 @@ package member.model;
 public class MemberWatchBean {
 
 	private int num;
-	private String video_num;
+	private int video_num;
 	private String member_id;
 	private String watchdate;
 	
 	private String video_image;
 	private String video_category;
-	
 	public int getNum() {
 		return num;
 	}
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public String getVideo_num() {
+	public int getVideo_num() {
 		return video_num;
 	}
-	public void setVideo_num(String video_num) {
+	public void setVideo_num(int video_num) {
 		this.video_num = video_num;
 	}
 	public String getMember_id() {
@@ -46,6 +45,4 @@ public class MemberWatchBean {
 	public void setVideo_category(String video_category) {
 		this.video_category = video_category;
 	}
-	
-	
 }

@@ -10,11 +10,13 @@
 <mvc:annotation-driven/>
 	<context:annotation-config />
 	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/video/" />
+		<property name="prefix" value="/WEB-INF/play/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<context:component-scan base-package="video" />
+	<context:component-scan base-package="play" />
 	<context:component-scan base-package="member" />
+	<context:component-scan base-package="video" />
+	<context:component-scan base-package="order" />
 
 </beans>

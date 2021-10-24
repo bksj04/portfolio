@@ -1,25 +1,15 @@
 package main.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import category.model.CategoryBean;
-import category.model.CategoryDao;
-import main.model.MainBean;
 import main.model.MainDao;
-import many.model.ManyBean;
-import many.model.ManyDao;
-import member.model.MemberJjimBean;
-import utility.Paging;
+import video.model.videoBean;
+import video.model.videoDao;
 
 @Controller
 public class MainController {
@@ -29,23 +19,21 @@ public class MainController {
 	
 	@Autowired
 	MainDao mdao;
-	
-	@Autowired(required = false)
-	CategoryDao cdao;
-	
-	
+
+	@Autowired
+	videoDao vdao;
 	
 	@RequestMapping(value=command)
 	public ModelAndView doAction() {
 		
 		ModelAndView mav = new ModelAndView();
-	
-		
-		List<CategoryBean> vlists = cdao.selectAll();
-		List<MainBean> lists = mdao.selectMain();
-		mav.addObject("lists",lists);
+
+		List<videoBean> vlists = vdao.getAllData();
 		mav.addObject("vlists",vlists);
-		
+		List<videoBean> hlists = vdao.getAllDataHot();
+		mav.addObject("hlists", hlists);
+		List<videoBean> jlists = vdao.getAllDataJjim();
+		mav.addObject("jlists", jlists);
 		mav.setViewName(getPage);
 		return mav;
 	}

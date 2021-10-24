@@ -79,7 +79,7 @@
 		</c:otherwise>
 		</c:choose>
 			<div>
-				<a href="play.video?video_num=${db.num}&member_id=${loginInfo.id}&video_image=${db.image}"><button
+				<a href="video.play?num=${db.num}"><button
 						name="view" class="btn btn-primary">시청하기</button></a>&nbsp;&nbsp;&nbsp;
 				<c:set var="flag" value="false" />
 				<c:forEach var="jjim" items="${mjlists }">

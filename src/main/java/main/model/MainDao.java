@@ -27,7 +27,10 @@ public class MainDao {
 		lists=sqlSessionTemplate.selectList(namespace+".selectMainAll");
 		return lists;
 	}
-	
+	public List<MainBean> selectMainAllHot(){
+		List<MainBean> mlists = sqlSessionTemplate.selectList(namespace+".selectMainAllHot");
+		return mlists;
+	}
 	
 	
 }

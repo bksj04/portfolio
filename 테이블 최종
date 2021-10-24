@@ -258,34 +258,33 @@ create sequence qna_seq
   maxvalue 10000
   nocache;
   -------------------------------------------------------------------------------------
-insert into members values(members_seq.nextval,'admin','1234','관리자',sysdate,'010','1111','1111','admin');
   
-insert into video values(video_seq.nextval,'감기','movie','18','flu.jpg');
-insert into video values(video_seq.nextval,'기생충','movie','15','parasite.jpg');
-insert into video values(video_seq.nextval,'검은태양','drama','18','blacksun.jpg');
-insert into video values(video_seq.nextval,'홍천기','drama','15','hongchungi.jpg');
-insert into video values(video_seq.nextval,'감자탕','drama','12','potato.jpg'); 
-insert into video values(video_seq.nextval,'빨강구두','drama','all','redshoes.jpg');
-insert into video values(video_seq.nextval,'원더우먼','drama','18','wonderwoman.jpg');
-insert into video values(video_seq.nextval,'1박2일','enter','18','1night2days.jpg');
-insert into video values(video_seq.nextval,'무엇이든 물어보살','enter','18','anyask.jpg');
-insert into video values(video_seq.nextval,'세상에 나쁜 개는 없다','enter','18','gooddog.jpg');
-insert into video values(video_seq.nextval,'미운 우리새끼','enter','18','hatebaby.jpg');
-insert into video values(video_seq.nextval,'안싸우면 다행이야','enter','18','nottofight.jpg'); 
-insert into video values(video_seq.nextval,'런닝맨','enter','18','runningman.jpg');
-insert into video values(video_seq.nextval,'나 혼자 산다','enter','18','solohome.jpg');
-insert into video values(video_seq.nextval,'동상이몽','enter','18','sunshine.jpg');
-insert into video values(video_seq.nextval,'놀면 뭐하니','enter','18','whatplay.jpg');
+insert into video values(video_seq.nextval,'감기','movie','18','flu.jpg',0,0);
+insert into video values(video_seq.nextval,'기생충','movie','15','parasite.jpg',0,0);
+insert into video values(video_seq.nextval,'검은태양','drama','18','blacksun.jpg',0,0);
+insert into video values(video_seq.nextval,'홍천기','drama','15','hongchungi.jpg',0,0);
+insert into video values(video_seq.nextval,'감자탕','drama','12','potato.jpg',0,0); 
+insert into video values(video_seq.nextval,'빨강구두','drama','all','redshoes.jpg',0,0);
+insert into video values(video_seq.nextval,'원더우먼','drama','18','wonderwoman.jpg',0,0);
+insert into video values(video_seq.nextval,'1박2일','enter','18','1night2days.jpg',0,0);
+insert into video values(video_seq.nextval,'무엇이든 물어보살','enter','18','anyask.jpg',0,0);
+insert into video values(video_seq.nextval,'세상에 나쁜 개는 없다','enter','18','gooddog.jpg',0,0);
+insert into video values(video_seq.nextval,'미운 우리새끼','enter','18','hatebaby.jpg',0,0);
+insert into video values(video_seq.nextval,'안싸우면 다행이야','enter','18','nottofight.jpg',0,0); 
+insert into video values(video_seq.nextval,'런닝맨','enter','18','runningman.jpg',0,0);
+insert into video values(video_seq.nextval,'나 혼자 산다','enter','18','solohome.jpg',0,0);
+insert into video values(video_seq.nextval,'동상이몽','enter','18','sunshine.jpg',0,0);
+insert into video values(video_seq.nextval,'놀면 뭐하니','enter','18','whatplay.jpg',0,0);
 
-insert into video values(video_seq.nextval,'블라인드 사이드','movie','15','main1.jpg');
- insert into video values(video_seq.nextval,'크루즈 패밀리','movie','15','main2.jpg');
- insert into video values(video_seq.nextval,'노팅힐','movie','15','main3.jpg');
-insert into video values(video_seq.nextval,'터미네이터','movie','15','main4.jpg');
- insert into video values(video_seq.nextval,'우리집','movie','15','main5.jpg');
-insert into video values(video_seq.nextval,'틴 스피릿','movie','15','main6.jpg');
- insert into video values(video_seq.nextval,'1917','movie','15','main7.jpg');
-insert into video values(video_seq.nextval,'미나리','movie','15','minari.jpg');
- insert into video values(video_seq.nextval,'존윅','movie','15','john.jpg');
+insert into video values(video_seq.nextval,'블라인드 사이드','movie','15','main1.jpg',0,0);
+ insert into video values(video_seq.nextval,'크루즈 패밀리','movie','15','main2.jpg',0,0);
+ insert into video values(video_seq.nextval,'노팅힐','movie','15','main3.jpg',0,0);
+insert into video values(video_seq.nextval,'터미네이터','movie','15','main4.jpg',0,0);
+ insert into video values(video_seq.nextval,'우리집','movie','15','main5.jpg',0,0);
+insert into video values(video_seq.nextval,'틴 스피릿','movie','15','main6.jpg',0,0);
+ insert into video values(video_seq.nextval,'1917','movie','15','main7.jpg',0,0);
+insert into video values(video_seq.nextval,'미나리','movie','15','minari.jpg',0,0);
+ insert into video values(video_seq.nextval,'존윅','movie','15','john.jpg',0,0);
  
  insert into video_c values(video_c_seq.nextval,1,'감기','아에이오우',120,'액션','해외','박만석','18','2021-11-10',0);
 insert into video_c values(video_c_seq.nextval,2,'기생충','아에이오우',120,'액션','해외','박만석','15','2021-11-10',0);

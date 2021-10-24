@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import member.model.MemberDao;
 import member.model.MemberJjimBean;
 import member.model.MemberJjimDao;
+import video.model.videoDao;
 
 
 @Controller
@@ -20,6 +21,9 @@ public class MemberJjimDeleteController {
 
 	@Autowired
 	MemberJjimDao mjdao;
+	
+	@Autowired(required = false)
+	videoDao vdao;
 
 	@RequestMapping(value = command)
 	public ModelAndView doAction(MemberJjimBean jjim) {
@@ -32,6 +36,7 @@ public class MemberJjimDeleteController {
 		str = firstLtr + restLtrs;
 
 		mjdao.deleteJjim(jjim);
+		vdao.jjimCountDown(jjim.getVideo_num());
 
 		if(str.equals("Main")) {
 			mav.setViewName("redirect:detail"+str+".wa"+"?num="+jjim.getVideo_num());

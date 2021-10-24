@@ -99,8 +99,8 @@ function openPop(){
   </div>
 </div>
 <%} %>
- | <a href="list.board">자유게시판</a>
- | <a href="pay.voucher">이용권</a></div></div>
+ <a href="list.board">자유게시판</a>
+ <a href="pay.voucher">이용권</a></div></div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="main.wa"><img src="resources/images/logo.png" width="160" height="85" /></a>

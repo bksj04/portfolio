@@ -12,7 +12,7 @@
 		<config>src/main/webapp/WEB-INF/spring/appServlet/category-servlet.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/cs-servlet.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/companyInfo-servlet.xml</config>
-		<config>src/main/webapp/WEB-INF/spring/appServlet/video-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/play-servlet.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>

@@ -8,9 +8,8 @@
     width:600px;
     }
     </style>
-   <video controls poster="resources/images/poster/${watch.video_image}">
+   <video controls poster="resources/images/poster/${vbean.image}">
       <source src="resources/videos/Dog.mp4" type="video/mp4">
-      <strong>Your browser does not support the video tag.</strong>
     </video>
     
     <%@include file="../display/bottom.jsp"%>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import category.model.CategoryBean;
+import video.model.videoBean;
 
 @Component
 public class MemberWatchDao {
@@ -16,8 +17,8 @@ public class MemberWatchDao {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 
-	public int insertWatch(MemberWatchBean watch) {
-		int cnt = sqlSessionTemplate.insert(namespace + ".insertWatch", watch);
+	public int insertWatch(MemberWatchBean mwbean) {
+		int cnt = sqlSessionTemplate.insert(namespace + ".insertWatch", mwbean);
 		return cnt;
 	}
 
