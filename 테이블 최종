@@ -1,15 +1,3 @@
-drop table admin CASCADE CONSTRAINTS;
-create table admin(
-num number primary key,
-id varchar2(50) not null unique,
-password varchar2(50) not null,
-name varchar2(50) not null,
-regdate date default sysdate,
-tel varchar2(20) not null,
-address varchar2(20) not null,
-email varchar2(50) not null
-);
-
 drop table members CASCADE CONSTRAINTS;
 create table members(
 num number primary key,
@@ -37,8 +25,7 @@ create table video(
 	title varchar2(50) not null,
 	category varchar2(50) not null,
 	grade varchar2(10) not null,
-	image varchar2(50) not null,
-	watchcount number not null
+	image varchar2(50) not null
 	);
   
   drop sequence video_seq;
@@ -112,7 +99,7 @@ drop table board CASCADE CONSTRAINTS;
 create table board( 
    num number not null primary key,
    writer varchar2(10) references members(id) on delete cascade not null,
-   subject varchar2(20) not null,
+   subject varchar2(50) not null,
    reg_date date not null,
    readcount int default 0,
    content varchar2(1000) not null
@@ -242,23 +229,8 @@ create sequence qna_seq
   maxvalue 10000
   nocache;
  
- drop table many CASCADE CONSTRAINTS;
- create table many(
- num number primary key,
- vnum number reference video(num) on delete cascade not null,
- watchcount number not null,
- jjim number not null
- );
- 
- drop sequence many_seq;
- create sequence many_seq;
-  increment by 1
-  start with 1
-  minvalue 1
-  maxvalue 10000
-  nocache;
   -------------------------------------------------------------------------------------
-insert into members values(members_seq.nextval,'admin','1234','관리자',sysdate,'010','1111','1111','admin');
+insert into members values(members_seq.nextval,'admin','1234','관리자',sysdate,'01011111111','vkfkdrhfo@gmail.com','갈현로','11111','123123');
   
 insert into video values(video_seq.nextval,'감기','movie','18','flu.jpg');
 insert into video values(video_seq.nextval,'기생충','movie','15','parasite.jpg');
