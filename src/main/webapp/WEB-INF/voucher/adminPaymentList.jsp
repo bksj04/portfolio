@@ -68,7 +68,7 @@ table {
 						<td>${mlist.password }</td>
 						<td>${mlist.name }</td>
 						<td>${mlist.regdate }</td>
-						<td>${mlist.tel1 } - ${mlist.tel2 } - ${mlist.tel3 }</td>
+						<td>${mlist.tel }</td>
 						<td>
 							<c:forEach var="olist" items="${olists }">
 								<c:if test="${mlist.num eq olist.mnum }">
