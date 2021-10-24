@@ -25,8 +25,8 @@ public class DetailVideoDeleteController {
 	@RequestMapping(value=command,method = RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam("num") int num,@RequestParam("pageNumber") int pn) {
 		
-		ddao.detailVideoDelete(num);
 		cdao.detailVideoDelete(num);
+		
 		ModelAndView mav=new ModelAndView();
 		
 		mav.setViewName(getPage);

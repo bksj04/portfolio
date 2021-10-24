@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 	<%@ include file="../common/common.jsp" %>
 <%@include file="../display/top.jsp" %>
 <style type="text/css">
@@ -9,11 +9,11 @@
 #detailVideo{
 	margin: 0 auto;
 	text-align: center;
-	width:400px;
+
 }
 .poster {
-	width: 400px;
-	height: 400px;
+	width:400px;
+		height:400px;
 }
 .poster_img {
 	width: 200px;
@@ -64,9 +64,9 @@
 <div id="detailVideoWrapper">
 	<div id="detailVideo">
 		<div class="poster">
-				<figure>
+				 <article>
 				<img src="resources/images/poster/${db.image}" style="width:100%;height: 100%; object-fit: contain;"/>
-				</figure>
+				</article>
 		</div>
 		<div class="infor">
 			<div class="infor_title">${db.title }</div>
@@ -89,7 +89,7 @@
 				</c:forEach>
 				<c:if test="${flag == 'true' }">
 					<a
-						href="deletejjim.member?video_num=${db.num}&member_id=${loginInfo.id}&video_category=main"><button
+						href="deletejjim.member?video_num=${db.num}&member_id=${loginInfo.id}&video_category=${db.category}"><button
 							class="btn btn-outline-danger active">찜
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -100,7 +100,7 @@
 				</c:if>
 				<c:if test="${flag == 'false' }">
 					<a
-						href="insertjjim.member?video_num=${db.num}&member_id=${loginInfo.id}&video_category=main">
+						href="insertjjim.member?video_num=${db.num}&member_id=${loginInfo.id}&video_category=${db.category}">
 						<button class="btn btn-outline-danger">찜
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -129,37 +129,30 @@
 <hr>
 
 <div>
-	<div class="usaGenre">
-		다른 영상
-	</div>
-	<c:forEach var="glist" items="${dlists }" >
-				<div style="display: inline-block;">
-					<div class="else" >
-							<c:forEach var="clist" items="${clists }">
-						<c:if test="${glist.vnum eq clist.num  && glist.title ne db.title}">
+	   <h5>유사한 장르</h5>
+					<c:forEach var="dblist" items="${dblists }">
+						<c:if test="${db.category == dblist.category}" >
+						<div style="display: inline-block;">
 				<figure>
-							<a href="detailMovie.category?num=${clist.num}"><img src="resources/images/poster/${clist.image}"
+							<a href="detailEnter.category?num=${dblist.num}"><img src="resources/images/poster/${dblist.image}"
 								class="poster_img" /></a>
-					
 				</figure>
 				<h4>
 					<span class="icon all ir_pm"> <c:if
-							test="${glist.grade eq '18' }">
+							test="${dblist.grade eq '18' }">
 							<img src="resources/images/icon/18.svg" class="icon_img">
-						</c:if> <c:if test="${glist.grade eq '15' }">
+						</c:if> <c:if test="${dblist.grade eq '15' }">
 							<img src="resources/images/icon/15.svg" class="icon_img">
-						</c:if> <c:if test="${glist.grade eq '12' }">
+						</c:if> <c:if test="${dblist.grade eq '12' }">
 							<img src="resources/images/icon/12.svg" class="icon_img">
-						</c:if> <c:if test="${glist.grade eq 'all' }">
+						</c:if> <c:if test="${dblist.grade eq 'all' }">
 							<img src="resources/images/icon/all.svg" class="icon_img">
 						</c:if>
-					</span> <strong><a href="detailMovie.category?num=${clist.num}">${glist.title }</a></strong>
+					</span> <strong><a href="detailEnter.category?num=${dblist.num}">${dblist.title }</a></strong>
 				</h4>
-						</c:if>
-					</c:forEach>
-					</div>
 				</div>
-				</c:forEach>
+					</c:if>
+					</c:forEach>
+		</div>
 </div>
-
-<%@ include file="./../display/bottom.jsp" %>
+<%@include file="../display/bottom.jsp"%>

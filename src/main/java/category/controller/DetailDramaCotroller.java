@@ -45,16 +45,14 @@ public class DetailDramaCotroller {
 			mav.addObject("msg", "로그인을 해야합니다");
 			mav.setViewName("alert");
 		}else {
-		DetailBean db=ddao.detailVideoView(num);
-		List<DetailBean> dlists = ddao.detailVideoGenre(db.getGenre());
-		List<CategoryBean> clists=cdao.selectAll();
-		List<MemberJjimBean> mjlists = mjdao.getByData(loginInfo.getId());
-		
-		
-		mav.addObject("db",db);
-		mav.addObject("dlists",dlists);
-		mav.addObject("clists",clists);
-		mav.addObject("mjlists", mjlists);
+			
+			DetailBean db = ddao.getOneData(num);
+			List<DetailBean> dblists = ddao.getByGenre(db.getGenre());
+			List<MemberJjimBean> mjlists = mjdao.getByData(loginInfo.getId());
+			
+			mav.addObject("db",db);
+			mav.addObject("dblists",dblists);
+			mav.addObject("mjlists", mjlists);
 		
 		mav.setViewName(getPage);
 		}

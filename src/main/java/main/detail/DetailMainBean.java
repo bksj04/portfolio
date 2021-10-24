@@ -10,18 +10,14 @@ public class DetailMainBean {
 	private String genre;
 	private String nation;
 	private String actor;
+	private String grade;
 	private String day;
 	private int series;
-	private String grade;
 	private String image;
 	private String category;
+	private int watchcount;
+	private int jjimcount;
 	
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
 	public int getNum() {
 		return num;
 	}
@@ -70,6 +66,12 @@ public class DetailMainBean {
 	public void setActor(String actor) {
 		this.actor = actor;
 	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
 	public String getDay() {
 		return day;
 	}
@@ -82,16 +84,29 @@ public class DetailMainBean {
 	public void setSeries(int series) {
 		this.series = series;
 	}
-	public String getGrade() {
-		return grade;
-	}
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
 	public String getImage() {
 		return image;
 	}
 	public void setImage(String image) {
 		this.image = image;
 	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public int getWatchcount() {
+		return watchcount;
+	}
+	public void setWatchcount(int watchcount) {
+		this.watchcount = watchcount;
+	}
+	public int getJjimcount() {
+		return jjimcount;
+	}
+	public void setJjimcount(int jjimcount) {
+		this.jjimcount = jjimcount;
+	}
+	
 }

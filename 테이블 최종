@@ -25,7 +25,9 @@ create table video(
 	title varchar2(50) not null,
 	category varchar2(50) not null,
 	grade varchar2(10) not null,
-	image varchar2(50) not null
+	image varchar2(50) not null,
+	watchcount number not null,
+  jjimcount number not null
 	);
   
   drop sequence video_seq;
@@ -39,7 +41,7 @@ create sequence video_seq
 drop table video_c CASCADE CONSTRAINTS;
 create table video_c(
 	num number primary key,
-	vnum number not null,
+	vnum number references video(num) on delete cascade not null,
   	title varchar2(50) not null,
 	content varchar2(100) not null,
 	runningT number not null,
@@ -48,10 +50,7 @@ create table video_c(
 	actor varchar2(50) not null,
   	grade varchar2(10) not null,
 	day varchar2(50) not null,
-  series varchar2(10),
-  constraint FK_video_c
- 	foreign key (vnum)
- 		references video(num)
+  series varchar2(10)
 );
 drop sequence video_c_seq;
 create sequence video_c_seq
@@ -228,12 +227,9 @@ create sequence qna_seq
   minvalue 1
   maxvalue 10000
   nocache;
- 
+
   -------------------------------------------------------------------------------------
-<<<<<<< HEAD
-=======
-insert into members values(members_seq.nextval,'admin','1234','관리자',sysdate,'01011111111','vkfkdrhfo@gmail.com','갈현로','11111','123123');
->>>>>>> 20484e776043c669f36ae5457234830eeb113817
+  insert into members values(members_seq.nextval,'admin','1234','aa',sysdate,'010333333333','bksj04@naver.com','06035','서울 강남구 가로수길 5 (신사동)','1111');
   
 insert into video values(video_seq.nextval,'감기','movie','18','flu.jpg',0,0);
 insert into video values(video_seq.nextval,'기생충','movie','15','parasite.jpg',0,0);
@@ -346,6 +342,5 @@ insert into board values(board_seq.nextval,'admin','감기 후기',sysdate,0,'너무재
 insert into board values(board_seq.nextval,'admin','노팅힐 후기',sysdate,0,'너무재미있어요!!');
 insert into board values(board_seq.nextval,'admin','터미네이터 후기',sysdate,0,'너무재미있어요!!');
 insert into board values(board_seq.nextval,'admin','기생충 후기',sysdate,0,'너무재미있어요!!');
-
 
 commit; 

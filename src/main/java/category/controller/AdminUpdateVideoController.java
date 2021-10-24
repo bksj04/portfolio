@@ -55,7 +55,7 @@ public class AdminUpdateVideoController {
 	    String filename = file.getOriginalFilename();
 	    int cnt = 0;
 		if(filename != null && !filename.equals("")) {
-			System.out.println("사진 바꿈");
+			System.out.println("�궗吏� 諛붽퓞");
 			new File(root_path + attach_path + filename).delete();				
 			File f = new File(root_path + attach_path + filename);
 			try {
@@ -67,19 +67,19 @@ public class AdminUpdateVideoController {
 			cnt = cdao.UpdateVideo(cb);
 		}else {
 			
-			System.out.println("사진 안바꿈");
+			System.out.println("�궗吏� �븞諛붽퓞");
 			cb.setImage(filename);		 			  
 			cnt = cdao.UpdateNoVideo(cb);
 		 }	
 	
 	    System.out.println(filename);
 	    
-	    System.out.println("업데이트");
+	    System.out.println("�뾽�뜲�씠�듃");
 	    CategoryBean ncb= cdao.selectNum(cb.getNum());  
 	    if(cnt>0) {
-	    	System.out.println("업데이트성공");
+	    	System.out.println("�뾽�뜲�씠�듃�꽦怨�");
 	    	System.out.println(ncb.getNum());
-	    	DetailBean db = ddao.selectNum(ncb.getNum()); 	  
+	    	DetailBean db = ddao.getOneData(ncb.getNum()); 	  
 	    	System.out.println(cb.getGrade());
 			System.out.println(cb.getCategory());
 			System.out.println(cb.getTitle());
@@ -87,7 +87,7 @@ public class AdminUpdateVideoController {
 	    	mav.addObject("db",db);	    	
 	    	mav.setViewName(gotoPage);
 	    }else {
-	    	System.out.println("실패");
+	    	System.out.println("�떎�뙣");
 	    	mav.setViewName(getPage);
 	    }
 	    
@@ -97,8 +97,7 @@ public class AdminUpdateVideoController {
 	  @RequestMapping(value="/adminLastUpdateVideo.category",method=RequestMethod.POST)
 	  public ModelAndView goPage(DetailBean db,CategoryBean cb, BindingResult result) {
 		  
-		  ddao.UpdateVideo(db);
-		  System.out.println("성공");
+		  ddao.updateData(db);
 		  ModelAndView mav=new ModelAndView();
 			mav.setViewName("redirect:/videoList.category");
 			return mav;

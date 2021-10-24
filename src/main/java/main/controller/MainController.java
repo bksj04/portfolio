@@ -8,13 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import main.model.MainDao;
-<<<<<<< HEAD
 import video.model.videoBean;
 import video.model.videoDao;
-=======
-import member.model.MemberJjimBean;
-import utility.Paging;
->>>>>>> 20484e776043c669f36ae5457234830eeb113817
 
 @Controller
 public class MainController {

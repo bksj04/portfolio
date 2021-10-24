@@ -7,6 +7,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import category.detail.DetailBean;
+
 @Component("MyDetailMainDao")
 public class DetailMainDao {
 
@@ -15,16 +17,12 @@ public class DetailMainDao {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 
-	public DetailMainBean detailMainVideoView(int vnum) {
-		DetailMainBean dmb = sqlSessionTemplate.selectOne(namespace+".detailMainVideoView",vnum);
+	public DetailMainBean getOneData(int num) {
+		DetailMainBean dmb = sqlSessionTemplate.selectOne(namespace+".getOneData",num);
 		return dmb;
 	}
-
-	public List<DetailMainBean> detailMainVideoGenre(String genre) {
-		List<DetailMainBean> lists = new ArrayList<DetailMainBean>();
-		lists=sqlSessionTemplate.selectList(namespace+".detailMainVideoGenre",genre);
-		return lists;
+	public List<DetailMainBean> getByGenre(String genre){
+		List<DetailMainBean> dmblists = sqlSessionTemplate.selectList(namespace+".getByGenre",genre);
+		return dmblists;	
 	}
-	
-	
 }

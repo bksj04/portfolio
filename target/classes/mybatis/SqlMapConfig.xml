@@ -22,6 +22,7 @@
 		<typeAlias type="order.model.OrderBean" alias="MyOrder"/>
 		<typeAlias type="cs.model.CsQnABean" alias="MyCsQnA"/>
 		<typeAlias type="video.model.videoBean" alias="MyVideo"/>
+		<typeAlias type="video.model.video_cBean" alias="MyVideo_c"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/member.xml"/>
@@ -40,6 +41,7 @@
 		<mapper resource="mybatis/order.xml" />
 		<mapper resource="mybatis/qna.xml" />
 		<mapper resource="mybatis/video.xml" />
+		<mapper resource="mybatis/video_c.xml" />
 		
 	</mappers>
 </configuration>

@@ -1,3 +1,4 @@
+
 package category.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +29,8 @@ public class DetailVideoController {
 	public ModelAndView doAction(@RequestParam("num")int num,
 			 @RequestParam("pageNumber") int pageNumber) {
 		
-		CategoryBean cb=cdao.detailVideoView(num);
-		DetailBean db=ddao.detailVideoView(num);
-		
+		DetailBean db=ddao.getOneData(num);
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("cb", cb);
 		mav.addObject("db", db);
 		mav.addObject("pageNumber", pageNumber);
 		mav.setViewName(getPage);

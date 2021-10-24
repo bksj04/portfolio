@@ -29,19 +29,11 @@ public class DetailMainController {
 	private final String getPage = "detailMain";
 	
 	@Autowired
-	MainDao mdao;
-	
-	@Autowired
 	DetailMainDao dmdao;
 	
 	@Autowired
 	MemberJjimDao mjdao;
 	
-	@Autowired
-	DetailDao ddao;
-	
-	@Autowired
-	CategoryDao cdao;
 	
 	@RequestMapping(value=command,method=RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam("num") int num,HttpSession session) {
@@ -55,14 +47,12 @@ public class DetailMainController {
 			mav.setViewName("alert");
 		}else {
 		
-			DetailBean db=ddao.detailVideoView(num);
-			List<DetailBean> dlists = ddao.detailVideoGenre(db.getGenre());
-			List<CategoryBean> clists=cdao.selectAll();
+			DetailMainBean db = dmdao.getOneData(num);
+			List<DetailMainBean> dblists = dmdao.getByGenre(db.getGenre());
 			List<MemberJjimBean> mjlists = mjdao.getByData(loginInfo.getId());
-
+			
 			mav.addObject("db",db);
-			mav.addObject("dlists",dlists);
-			mav.addObject("clists",clists);
+			mav.addObject("dblists",dblists);
 			mav.addObject("mjlists", mjlists);
 		
 		mav.setViewName(getPage);

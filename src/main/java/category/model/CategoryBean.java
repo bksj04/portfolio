@@ -15,7 +15,6 @@ public class CategoryBean {
 	private String category;
 	@NotBlank(message = "시청연령을 선택해주세요")
 	private String grade;
-	
 	private String image;
 	
 	

@@ -21,15 +21,16 @@ import category.model.CategoryDao;
 import member.model.MemberBean;
 import member.model.MemberJjimBean;
 import member.model.MemberJjimDao;
+import video.model.videoBean;
+import video.model.videoDao;
+import video.model.video_cBean;
+import video.model.video_cDao;
 
 @Controller
 public class DetailMovieController {
 	
 	private final String command="/detailMovie.category";
 	private final String getPage="detailMovie";
-	
-	@Autowired
-	CategoryDao cdao;
 	
 	@Autowired
 	DetailDao ddao;
@@ -48,14 +49,13 @@ public class DetailMovieController {
 			mav.addObject("msg", "로그인을 해야합니다");
 			mav.setViewName("alert");
 		}else {
-		DetailBean db=ddao.detailVideoView(num);
-		List<DetailBean> dlists = ddao.detailVideoGenre(db.getGenre());
-		List<CategoryBean> clists=cdao.selectAll();
+			
+		DetailBean db = ddao.getOneData(num);
+		List<DetailBean> dblists = ddao.getByGenre(db.getGenre());
 		List<MemberJjimBean> mjlists = mjdao.getByData(loginInfo.getId());
 		
 		mav.addObject("db",db);
-		mav.addObject("dlists",dlists);
-		mav.addObject("clists",clists);
+		mav.addObject("dblists",dblists);
 		mav.addObject("mjlists", mjlists);
 
 		mav.setViewName(getPage);

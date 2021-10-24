@@ -43,11 +43,10 @@ public class AdminInsertVideoController {
 		
 		ModelAndView mav=new ModelAndView();	
 		if(result.hasErrors() || file.isEmpty() ) {
-			System.out.println("에러.");
+			System.out.println("�뿉�윭.");
 			mav.setViewName(getPage);
 			return mav;
 		}
-		String category=cb.getCategory();
 		System.out.println(cb.getGrade());
 		System.out.println(cb.getCategory());
 		System.out.println(cb.getTitle());
@@ -85,15 +84,14 @@ public class AdminInsertVideoController {
 	@RequestMapping(value="/adminLastInsertVideo.category",method=RequestMethod.POST)
 	public ModelAndView goPage(@Valid DetailBean db,BindingResult result,CategoryBean cb) {
 		ModelAndView mav=new ModelAndView();
-		System.out.println("에러러");
+		System.out.println("�뿉�윭�윭");
 		CategoryBean ncb=cdao.selectTitle(cb.getTitle());
 		if(result.hasErrors()) {
 			mav.addObject("cb",ncb);
-			System.out.println("에러2.");
 			mav.setViewName(goPage);
 			return mav;
 		}
-		ddao.InsertVideo(db);
+		ddao.insertData(db);
 		
 		mav.setViewName("redirect:/videoList.category");
 		return mav;
