@@ -59,7 +59,7 @@
 	</select>
 	<insert id="insertVideo">
 		insert into video 
-		values(video_seq.nextval,#{title},#{category},#{grade},#{image})
+		values(video_seq.nextval,#{title},#{category},#{grade},#{image},0,0)
 	</insert>
 	
 	

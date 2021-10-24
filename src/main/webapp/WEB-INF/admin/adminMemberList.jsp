@@ -4,9 +4,6 @@
 <%@include file="./../common/common.jsp"%>
 
 <script type="text/javascript">
-	function goInsert(){
-		location.href="memberInsert.admin";
-	}
 	function goUpdate(num,pn){
 		location.href="memberUpdate.admin?num="+num+"&pageNumber="+pn;
 	}
@@ -42,8 +39,6 @@ table {
 			</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-primary"
 				value="검색">		
 				<div align="right">
-	<input type="button" class="btn btn-primary" value="회원생성"
-		onClick="goInsert()">
 </div>
 				
 		</form>

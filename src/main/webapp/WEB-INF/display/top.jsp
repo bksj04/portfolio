@@ -90,7 +90,9 @@ function openPop(){
   <button class="dropbtn">${loginInfo.name}님</button>
   <div class="dropdown-content">
     <p align="center">${loginInfo.name}</p>
+    <c:if test="${loginInfo.id == 'admin' }">
     	<a href="adminMain.admin">관리자 페이지</a>
+    	</c:if>
     <a href="mypage.member?num=${loginInfo.num}&movie_title=${db.title}">마이페이지</a>
         <a href="#none" target="_blank" onclick="openPop()">알림함</a>
     <a href="update.member?num=${loginInfo.num}">회원정보 수정</a>
@@ -99,8 +101,8 @@ function openPop(){
   </div>
 </div>
 <%} %>
- <a href="list.board">자유게시판</a>
- <a href="pay.voucher">이용권</a></div></div>
+  <a href="list.board">자유게시판</a>
+  <a href="pay.voucher">이용권</a></div></div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="main.wa"><img src="resources/images/logo.png" width="160" height="85" /></a>

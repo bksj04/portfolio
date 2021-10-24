@@ -1,11 +1,9 @@
 eclipse.preferences.version=1
 encoding//src/main/java/admin/controller/adminMainController.java=UTF-8
 encoding//src/main/java/admin/controller/adminMemberDetailViewController.java=UTF-8
-encoding//src/main/java/admin/controller/adminMemberInsertController.java=UTF-8
 encoding//src/main/java/admin/controller/adminMemberUpdateController.java=UTF-8
 encoding//src/main/java/category/controller/AdminInsertVideoController.java=UTF-8
 encoding//src/main/java/category/controller/AdminUpdateVideoController.java=UTF-8
 encoding//src/main/java/category/model/CategoryBean.java=UTF-8
 encoding//src/main/java/member/controller/updateController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/display/top.jsp=UTF-8
-encoding//src/main/webapp/memo.txt=UTF-8

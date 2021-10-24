@@ -229,7 +229,8 @@ create sequence qna_seq
   nocache;
 
   -------------------------------------------------------------------------------------
-  insert into members values(members_seq.nextval,'admin','1234','aa',sysdate,'010333333333','bksj04@naver.com','06035','서울 강남구 가로수길 5 (신사동)','1111');
+  insert into members values(members_seq.nextval,'admin','1234','admin',sysdate,'010333333333','bksj04@naver.com','06035','서울 강남구 가로수길 5 (신사동)','1111');
+  insert into members values(members_seq.nextval,'aa','1234','aa',sysdate,'010333333333','bksj04@naver.com','06035','서울 강남구 가로수길 5 (신사동)','1111');
   
 insert into video values(video_seq.nextval,'감기','movie','18','flu.jpg',0,0);
 insert into video values(video_seq.nextval,'기생충','movie','15','parasite.jpg',0,0);
@@ -283,7 +284,7 @@ insert into video_c values(video_c_seq.nextval,16,'놀면 뭐하니','아에이오우',120
  insert into video_c values(video_c_seq.nextval,22,'틴 스피릿','더 이상 망설일 수 없어 진짜 나 보여줄게!',93,'드라마','해외','옐르 패닝','12','2019-09-04',0);
 insert into video_c values(video_c_seq.nextval,23,'1917','제1차 세계대전이 한창인 1917년.',119,'전쟁','해외','조지 맥케이','15','2020-02-19',0);
 insert into video_c values(video_c_seq.nextval,24,'미나리','어느 한국 가족의 원더풀한 이야기. "미나리는 어디서든 잘 자라".',115,'드라마','해외','스티븐 연, 윤여정','12','2021-03-03',0);
-insert into video_c values(video_c_seq.nextval,25,'존윅','그를 건드리지 말았어야 했다. 상대를 잘못 고른 적들을 향한 통쾌한 복수!',101,'액션','해외','키아누리브스','19','2015-01-21',0);
+insert into video_c values(video_c_seq.nextval,25,'존윅','그를 건드리지 말았어야 했다. 상대를 잘못 고른 적들을 향한 통쾌한 복수!',101,'액션','해외','키아누리브스','15','2015-01-21',0);
 
 insert into coupon values(coupon_seq.nextval,'','a','1234',0.4,'','2022-10-20','',default);
 //쿠폰등록 케이스
@@ -333,14 +334,14 @@ insert into commodity values(commodity_seq.nextval,'Standard X Bugs 듣기',
 insert into commodity values(commodity_seq.nextval,'Premium X KB 나라사랑카드',
 '동시시청 1회선,HD화질,모바일+PC',7900);
 
-insert into board values(board_seq.nextval,'admin','기생충 후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','감기 후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','노팅힐 후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','터미네이터 후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충 후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','감기 후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','노팅힐 후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','터미네이터 후기',sysdate,0,'너무재미있어요!!');
-insert into board values(board_seq.nextval,'admin','기생충 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','기생충 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','감기 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','노팅힐 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','터미네이터 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','기생충 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','감기 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','노팅힐 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','터미네이터 후기',sysdate,0,'너무재미있어요!!');
+insert into board values(board_seq.nextval,'aa','기생충 후기',sysdate,0,'너무재미있어요!!');
 
 commit; 
