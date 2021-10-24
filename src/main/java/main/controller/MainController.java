@@ -16,8 +16,6 @@ import category.model.CategoryBean;
 import category.model.CategoryDao;
 import main.model.MainBean;
 import main.model.MainDao;
-import many.model.ManyBean;
-import many.model.ManyDao;
 import member.model.MemberJjimBean;
 import utility.Paging;
 
