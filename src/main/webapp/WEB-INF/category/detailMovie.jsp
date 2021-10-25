@@ -154,5 +154,4 @@
 					</c:if>
 					</c:forEach>
 		</div>
-</div>
 <%@include file="../display/bottom.jsp"%>
